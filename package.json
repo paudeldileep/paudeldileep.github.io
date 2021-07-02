@@ -1,0 +1,15 @@
+{
+  "name": "DKT-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i src/styles/style.css -o dist/css/style.css"
+  },
+  "keywords": [],
+  "author": "Dileep Kumar T",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^2.2.2"
+  }
+}
