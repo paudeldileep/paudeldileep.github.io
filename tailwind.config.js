@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       colors: {
         emerald: colors.emerald,
+        cyan:colors.cyan,
       },
       backgroundImage: (theme) => ({
         "hero-image": "url('assets/dkt.jpg')",
