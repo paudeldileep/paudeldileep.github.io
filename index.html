@@ -473,6 +473,9 @@
             console.log(data);
             $.ajax({
                 contentType: "application/json",
+                xhrFields: {
+         withCredentials: true
+    },
                 url: 'https://dktbackend.herokuapp.com/api/save-msg', // url where to submit the request
                 method : "POST", // type of action POST || GET
                 dataType : 'json', // data type
