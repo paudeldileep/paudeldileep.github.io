@@ -416,11 +416,11 @@
             <div class="h-full w-full px-1 pt-[1px] flex flex-col items-center">
                 <h2 class="mt-1 text-xl text-gray-600 dark:text-gray-100 font-mono font-semibold">Want to Chat?</h2>
                 <div class="w-full">
-                  <form class="w-3/4 h-56 flex flex-col items-stretch m-auto justify-evenly">
-                      <input type="text" name="name" placeholder="Name" class="pl-2 py-1 border-b border-emerald-500 focus:outline-none focus:shadow-md rounded-sm"/>
-                      <input type="email" name="email" placeholder="Email" class="pl-2 py-1 border-b border-emerald-500 focus:outline-none focus:shadow-md rounded-sm"/>
-                      <textarea name="message" id="" cols="20" rows="3" placeholder="Message" class="border-b border-emerald-500 pl-2 py-1 focus:outline-none focus:shadow-md rounded-sm"></textarea>
-                      <button type="button" class="ring-1 py-1 ring-emerald-400 bg-gray-200 focus:outline-none focus:ring focus:bg-emerald-300 rounded-sm">Ping</button>
+                  <form id="form" class="w-3/4 h-56 flex flex-col items-stretch m-auto justify-evenly">
+                      <input type="text" name="name" id="name" placeholder="Name" class="pl-2 py-1 border-b border-emerald-500 focus:outline-none focus:shadow-md rounded-sm"/>
+                      <input type="email" name="email" id="email" placeholder="Email" class="pl-2 py-1 border-b border-emerald-500 focus:outline-none focus:shadow-md rounded-sm"/>
+                      <textarea name="message" id="message" cols="20" rows="3" placeholder="Message" class="border-b border-emerald-500 pl-2 py-1 focus:outline-none focus:shadow-md rounded-sm"></textarea>
+                      <button type="button" id="submitBtn" class="ring-1 py-1 ring-emerald-400 bg-gray-200 focus:outline-none focus:ring focus:bg-emerald-300 rounded-sm">Ping</button>
                   </form>
                 </div>
             </div>
@@ -460,6 +460,36 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+    
+    $(document).ready(function(){
+        // click on button submit
+        $("#submitBtn").on('click', function(){
+            // send ajax
+            
+            const name=$('#name').val();
+            const email=$('#email').val();
+            const message=$('#message').val();
+            const data={name,email,message};
+            console.log(data);
+            $.ajax({
+                contentType: "application/json",
+                url: 'https://dktbackend.herokuapp.com/api/save-msg', // url where to submit the request
+                type : "POST", // type of action POST || GET
+                dataType : 'json', // data type
+                data : data, // post data || get data
+                success : function(result) {
+                    // you can see the result from the console
+                    // tab of the developer tools
+                    console.log(result);
+                    alert(result.message);
+                },
+                error: function(xhr, resp, text) {
+                    alert('Something Went Wrong!');
+
+                }
+            })
+        });
+    });
   </script>
   
   <!--scroll magic-->
