@@ -474,7 +474,7 @@
             $.ajax({
                 contentType: "application/json",
                 url: 'https://dktbackend.herokuapp.com/api/save-msg', // url where to submit the request
-                type : "POST", // type of action POST || GET
+                method : "POST", // type of action POST || GET
                 dataType : 'json', // data type
                 data : data, // post data || get data
                 success : function(result) {
