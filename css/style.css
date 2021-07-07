@@ -911,10 +911,6 @@ video {
   height: 16rem;
 }
 
-.h-80 {
-  height: 20rem;
-}
-
 .h-56 {
   height: 14rem;
 }
@@ -1792,6 +1788,10 @@ video {
     height: 1.5rem;
   }
 
+  .sm\:h-80 {
+    height: 20rem;
+  }
+
   .sm\:w-24 {
     width: 6rem;
   }
@@ -1810,6 +1810,10 @@ video {
 
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:flex-nowrap {
+    flex-wrap: nowrap;
   }
 
   .sm\:items-center {
