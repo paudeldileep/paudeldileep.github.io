@@ -473,9 +473,6 @@
             console.log(data);
             $.ajax({
                 contentType: "application/json",
-                xhrFields: {
-         withCredentials: true
-    },
                 url: 'https://dktbackend.herokuapp.com/api/save-msg', // url where to submit the request
                 method : "POST", // type of action POST || GET
                 dataType : 'json', // data type
@@ -487,6 +484,7 @@
                     alert(result.message);
                 },
                 error: function(xhr, resp, text) {
+                  console.log('resp'+resp);
                     alert('Something Went Wrong!');
 
                 }
