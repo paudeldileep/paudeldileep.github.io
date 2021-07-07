@@ -469,7 +469,7 @@
             const name=$('#name').val();
             const email=$('#email').val();
             const message=$('#message').val();
-            const data=JSON({name,email,message});
+            const data={"name":name,"email":email,"message":message};
             console.log(data);
             $.ajax({
                 contentType: "application/x-www-form-urlencoded",
