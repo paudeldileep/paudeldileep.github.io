@@ -472,10 +472,10 @@
             const data={name,email,message};
             console.log(data);
             $.ajax({
-                contentType: "application/json",
+                contentType: "text/plain",
                 url: 'https://dktbackend.herokuapp.com/api/save-msg', // url where to submit the request
                 method : "POST", // type of action POST || GET
-                dataType : 'json', // data type
+                //dataType : 'json', // data type
                 data : data, // post data || get data
                 success : function(result) {
                     // you can see the result from the console
