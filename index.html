@@ -469,11 +469,11 @@
             const name=$('#name').val();
             const email=$('#email').val();
             const message=$('#message').val();
-            const data={"name":name,"email":email,"message":message};
+            const data={name,email,message};
             console.log(data);
             $.ajax({
                 contentType: "application/x-www-form-urlencoded",
-                url: 'http://127.0.0.1/api/save-msg', // url where to submit the request
+                url: 'https//dktbackend.herokuapp.com/api/save-msg', // url where to submit the request
                 method : "POST", // type of action POST || GET
                 //dataType : 'json', // data type
                 data : data, // post data || get data
